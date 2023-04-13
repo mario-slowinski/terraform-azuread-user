@@ -6,6 +6,6 @@ output "data" {
 
 output "password" {
   description = "User's password."
-  value       = random_password.user.result
+  value       = coalesce(sensitive(var.password), random_password.user.result)
   sensitive   = true
 }
