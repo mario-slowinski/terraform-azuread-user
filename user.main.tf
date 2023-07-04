@@ -19,7 +19,7 @@ resource "azuread_user" "this" {
   job_title                   = var.job_title
   mail                        = var.mail
   mail_nickname               = var.mail_nickname
-  manager_id                  = var.manager_id
+  manager_id                  = one(data.azuread_user.manager[*].object_id)
   mobile_phone                = var.mobile_phone
   office_location             = var.office_location
   onpremises_immutable_id     = var.onpremises_immutable_id
