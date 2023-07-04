@@ -24,7 +24,7 @@ resource "azuread_user" "this" {
   office_location             = var.office_location
   onpremises_immutable_id     = var.onpremises_immutable_id
   other_mails                 = var.other_mails
-  password                    = coalesce(sensitive(var.password), random_password.user.result)
+  password                    = var.password == "" ? random_password.user.result : var.password
   postal_code                 = var.postal_code
   preferred_language          = var.preferred_language
   show_in_address_list        = var.show_in_address_list
