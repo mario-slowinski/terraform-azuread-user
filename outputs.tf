@@ -1,6 +1,6 @@
-output "data" {
+output "user" {
   description = "User's data."
-  value       = azuread_user.this
+  value       = local.user
   sensitive   = false
 }
 
