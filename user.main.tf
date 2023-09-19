@@ -1,4 +1,6 @@
-resource "azuread_user" "this" {
+resource "azuread_user" "user_principal_name" {
+  for_each = var.user_principal_name != null ? toset([var.user_principal_name]) : toset([])
+
   account_enabled             = var.account_enabled
   age_group                   = var.age_group
   business_phones             = var.business_phones
@@ -24,7 +26,7 @@ resource "azuread_user" "this" {
   office_location             = var.office_location
   onpremises_immutable_id     = var.onpremises_immutable_id
   other_mails                 = var.other_mails
-  password                    = var.password == "" ? random_password.user.result : var.password
+  password                    = var.password != null ? var.password : random_password.user.result
   postal_code                 = var.postal_code
   preferred_language          = var.preferred_language
   show_in_address_list        = var.show_in_address_list
