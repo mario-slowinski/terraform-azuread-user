@@ -1,6 +1,6 @@
 output "user" {
   description = "User's data."
-  value       = local.user
+  value       = { for user_principal_name, user in azuread_user.user_principal_name : user_principal_name => user }
   sensitive   = false
 }
 
