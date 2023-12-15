@@ -26,7 +26,7 @@ resource "azuread_user" "user_principal_name" {
   office_location             = var.office_location
   onpremises_immutable_id     = var.onpremises_immutable_id
   other_mails                 = var.other_mails
-  password                    = var.password != null ? var.password : random_password.user.result
+  password                    = var.password != "" ? var.password : random_password.user.result
   postal_code                 = var.postal_code
   preferred_language          = var.preferred_language
   show_in_address_list        = var.show_in_address_list
