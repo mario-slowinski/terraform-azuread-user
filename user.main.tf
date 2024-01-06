@@ -1,6 +1,4 @@
-resource "azuread_user" "user_principal_name" {
-  for_each = var.user_principal_name != null ? toset([var.user_principal_name]) : toset([])
-
+resource "azuread_user" "data" {
   account_enabled             = var.account_enabled
   age_group                   = var.age_group
   business_phones             = var.business_phones

@@ -1,6 +1,3 @@
-# default empty - required
-# default null - optional
-
 variable "account_enabled" {
   type        = bool
   description = "Whether or not the account should be enabled."

@@ -1,6 +1,6 @@
-output "user" {
+output "data" {
   description = "User's data."
-  value       = { for user_principal_name, user in azuread_user.user_principal_name : user_principal_name => user }
+  value       = azuread_user.data
   sensitive   = false
 }
 
