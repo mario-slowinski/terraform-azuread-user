@@ -1,5 +1,5 @@
-resource "azurerm_key_vault_secret" "this" {
-  count = length(var.key_vault_id) > 0 ? 1 : 0
+resource "azurerm_key_vault_secret" "name" {
+  for_each = var.key_vault_id != null ? toset([coalesce(var.name, local.secret)]) : toset([])
 
   name            = coalesce(var.name, local.secret)
   value           = coalesce(var.password, random_password.user.result)

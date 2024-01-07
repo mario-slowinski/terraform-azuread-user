@@ -1,7 +1,7 @@
 variable "key_vault_id" {
   type        = string
   description = "The ID of the Key Vault where the Secret should be created."
-  default     = ""
+  default     = null
 }
 
 variable "content_type" {
@@ -13,7 +13,7 @@ variable "content_type" {
 variable "name" {
   type        = string
   description = "Specifies the name of the Key Vault Secret."
-  default     = ""
+  default     = null
 }
 
 variable "tags" {
