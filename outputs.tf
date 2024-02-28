@@ -10,6 +10,18 @@ output "mail" {
   sensitive   = false
 }
 
+output "other_mails" {
+  description = "A list of additional email addresses for the user."
+  value       = azuread_user.this.other_mails
+  sensitive   = false
+}
+
+output "mobile_phone" {
+  description = "The primary cellular telephone number for the user."
+  value       = azuread_user.this.mobile_phone
+  sensitive   = false
+}
+
 output "creation_type" {
   description = "Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified)."
   value       = azuread_user.this.creation_type
