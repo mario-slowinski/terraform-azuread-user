@@ -1,4 +1,4 @@
-resource "azuread_user" "data" {
+resource "azuread_user" "this" {
   account_enabled             = var.account_enabled
   age_group                   = var.age_group
   business_phones             = var.business_phones

@@ -1,6 +1,3 @@
-# default empty - required
-# default null - optional
-
 variable "keepers" {
   type        = map(string)
   description = "Arbitrary map of values that, when changed, will trigger recreation of resource."
